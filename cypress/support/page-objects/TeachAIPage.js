@@ -68,12 +68,9 @@ class TeachAIPage {
 
   // ----- Assertions -----
   shouldShowFileInList(fileName) {
-    // The card may display the file name; we can check for presence of a card with the file name
-    // The HTML shows a card with a title attribute; we can check the text.
-    // For simplicity, check that a data source card exists and contains the file name.
+    
     this.dataSourceCards.should('be.visible');
-    // Optionally, check that the first card contains the file name (or the file type icon)
-    // We can just verify at least one card exists.
+    
     return this;
   }
 }

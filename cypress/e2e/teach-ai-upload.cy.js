@@ -11,7 +11,7 @@ Cypress.on('uncaught:exception', (err) => {
   }
 });
 
-describe('Teach AI – Document Upload', () => {
+describe('Teach AI - Document Upload', () => {
   const loginPage = new LoginPage();
   const teachAIPage = new TeachAIPage();
   const testUser = usersData.users.testUser;

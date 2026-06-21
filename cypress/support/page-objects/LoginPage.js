@@ -33,7 +33,7 @@ class LoginPage {
     cy.url({ timeout: 15000 }).should('include', '/projects');
     this.projectsHeading.should('be.visible');
 
-    return this; // ✅ Return the page object for chaining
+    return this; 
   }
 
   shouldBeOnProjectsPage() {
