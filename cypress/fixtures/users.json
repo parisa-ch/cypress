@@ -1,0 +1,38 @@
+{
+  "users": {
+    "testUser": {
+      "email": "yasiriqbal348@gmail.com",
+      "password": "Yasir187643",
+      "name": "Test User"
+    },
+    "invalidUsers": [
+      {
+        "email": "invalid@email.com",
+        "password": "Yasir187643",
+        "expected": "Invalid credentials"
+      },
+      {
+        "email": "yasiriqbal348@gmail.com",
+        "password": "wrong",
+        "expected": "Invalid credentials"
+      }
+    ]
+  },
+  "project": {
+    "projectName": "AI Test Project",
+    "description": "This is a test project for AI training",
+    "longDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+  },
+  "urls": {
+    "validUrls": [
+      "https://evo.dev.theysaid.io/",
+      "https://sub.domain.com/path",
+      "https://localhost:3000"
+    ],
+    "invalidUrls": [
+      "invalid",
+      "htp://wrong",
+      "javascript:alert(1)"
+    ]
+  }
+}
