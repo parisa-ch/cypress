@@ -10,24 +10,28 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm ci'                    // ✅ Use 'bat' for Windows
+                bat 'npm ci'
             }
         }
 
         stage('Run Cypress Tests') {
             steps {
-                bat 'npx cypress run --headless --browser chrome'   // ✅ Use 'bat' for Windows
+                bat 'npx cypress run --headless --browser chrome'
             }
         }
     }
 
     post {
         always {
+            // Archive artifacts
             archiveArtifacts artifacts: 'cypress/screenshots/**', allowEmptyArchive: true
             archiveArtifacts artifacts: 'cypress/videos/**', allowEmptyArchive: true
+            
+            // ★★★ PUBLISH TEST RESULTS TO JENKINS UI ★★★
+            junit 'test-results/*.xml'
         }
         failure {
-            echo '❌ Cypress tests failed! Check the artifacts for screenshots and videos.'
+            echo '❌ Cypress tests failed! Check the reports and artifacts.'
         }
         success {
             echo '✅ All Cypress tests passed!'

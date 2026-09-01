@@ -1,6 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  // ★★★ ADD THIS REPORTER CONFIGURATION ★★★
+  reporter: 'junit',
+  reporterOptions: {
+    mochaFile: 'test-results/results-[hash].xml',
+    toConsole: false,
+  },
+
+  // Your existing configuration (keep everything below)
   allowCypressEnv: false,
 
   e2e: {
